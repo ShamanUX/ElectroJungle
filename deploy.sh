@@ -2,13 +2,7 @@
 
 set -e 
 
+
 npm run build
-
-cd dist
-
-git init 
-git add -A
-git commit -m 'New Deployment'
-git push -f https://github.com/ShamanUX/ElectroJungle.git live:gh-pages
-
-cd -
+git add -A && git commit -m "New deploy"
+git subtree push --prefix dist origin gh-pages

@@ -7,7 +7,7 @@ import EmbedItem from "@/components/EmbedItem.vue";
 
 <template>
   <main>
-    <h1 id="mainTitle" class="centerText">ElectroJungle</h1>
+    <h1 id="mainTitle" class="centerText">ElectroJungle test</h1>
     <div id="mainTitleBroken" class="centerText">
       <h1>Electro</h1>
       <h1>Jungle</h1>
