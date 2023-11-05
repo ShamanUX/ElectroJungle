@@ -1,35 +1,34 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { RouterLink, RouterView } from "vue-router";
+import TheWelcome from "../components/TheWelcome.vue";
 import MonsteraImg from "@/assets/ElectricMonstera.png";
 import EmbedItem from "@/components/EmbedItem.vue";
 </script>
 
 <template>
   <main>
-    <h1 id="mainTitle" class="centerText">ElectroJungle</h1>
-    <div id="mainTitleBroken" class="centerText">
-      <h1>Electro</h1>
-      <h1>Jungle</h1>
-    </div>
-    <Transition appear>
-      <div id="bgImg">
-        <h2 id="headerDate" class="centerText">Lauantai 20.1.2012</h2>
-        <h2 id="headerTime" class="centerText">20-00</h2>
-        <div class="wrapper">
-          <nav>
-            <RouterLink to="/lineup">Lineup</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-          </nav>
-        </div>
-
-        <RouterView />
+    <Transition appear name="embed">
+      <div class="embedContainer">
+        <EmbedItem dj-name="JTL" host="mixcloud" />
+        <EmbedItem dj-name="Pekko Haimi" host="soundcloud" />
+        <EmbedItem dj-name="Marumiini" host="soundcloud" />
+        <EmbedItem dj-name="UtepiA" host="mixcloud" />
       </div>
     </Transition>
   </main>
 </template>
 
 <style scoped>
+.embedContainer {
+  display: flex;
+  padding: 100px 100px 0 100px;
+  gap: 60px;
+  opacity: 0.9;
+}
+
+.embedColumn {
+}
+
 .centerText {
   text-align: center;
 }
@@ -53,7 +52,7 @@ import EmbedItem from "@/components/EmbedItem.vue";
   background-color: aliceblue;
   background-position: center center;
   background-size: cover;
-  background-image: url("./assets/ElectricMonstera.png");
+  background-image: url("../assets/ElectricMonstera.png");
 }
 
 @media screen and (max-width: 450px) {
