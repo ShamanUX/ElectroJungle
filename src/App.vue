@@ -30,6 +30,14 @@ import EmbedItem from "@/components/EmbedItem.vue";
 </template>
 
 <style scoped>
+.wrapper nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  font-size: 30px;
+}
 .centerText {
   text-align: center;
 }
@@ -44,6 +52,7 @@ import EmbedItem from "@/components/EmbedItem.vue";
   display: none;
   font-family: "mael";
   letter-spacing: 0.15rem;
+  line-height: 4rem;
 }
 
 #bgImg {
@@ -58,11 +67,12 @@ import EmbedItem from "@/components/EmbedItem.vue";
 
 @media screen and (max-width: 450px) {
   #mainTitleBroken {
-    display: block;
+    display: none;
     font-size: 30px;
   }
   #mainTitle {
-    display: none;
+    display: block;
+    font-size: 40px;
   }
 }
 
