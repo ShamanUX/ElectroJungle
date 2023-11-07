@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TheWelcome from "../components/TheWelcome.vue";
-import MonsteraImg from "@/assets/ElectricMonstera.png";
 import EmbedItem from "@/components/EmbedItem.vue";
 </script>
 
@@ -41,15 +40,6 @@ import EmbedItem from "@/components/EmbedItem.vue";
   letter-spacing: 0.15rem;
 }
 
-#bgImg {
-  overflow: hidden;
-  max-width: 100vw;
-  min-height: 100vh;
-  background-color: aliceblue;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("../assets/ElectricMonstera.png");
-}
 @media screen and (max-width: 900px) {
   .embedContainer {
     flex-direction: column;

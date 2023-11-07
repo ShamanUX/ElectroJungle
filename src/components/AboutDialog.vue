@@ -9,10 +9,11 @@ import rajatonLogo from "@/assets/rajatontaide_logo_transparent.svg";
     </template>
 
     <template v-slot:default="{ isActive }">
-      <v-card title="Dialog">
+      <v-card title="About">
         <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          ElectroJungle combines the tropical gardens of Botania Joensuu with
+          mesmerizing electronic music from various subgenres. <br />
+          Alcoholic beverages and snackbar are available at the venue.
         </v-card-text>
         <img class="rajatonlogo" :src="rajatonLogo" />
         <v-card-actions>
@@ -35,5 +36,12 @@ import rajatonLogo from "@/assets/rajatontaide_logo_transparent.svg";
 }
 .aboutDialog {
   font-family: "exo";
+}
+
+@media screen and (max-width: 450px) {
+  .rajatonlogo {
+    max-width: 100px;
+    padding: 5px;
+  }
 }
 </style>

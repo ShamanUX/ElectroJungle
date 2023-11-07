@@ -16,12 +16,14 @@ const showLineup = ref(false);
           <span class="bigLetter">E</span>lectro<span class="bigLetter">J</span
           >ungle
         </h1>
-        <h2 id="headerDate" class="centerText">Lauantai 20.1.2024</h2>
-        <h2 id="headerTime" class="centerText">20-00</h2>
+        <h2 id="headerDate" class="centerText">Saturday 20.1.2024</h2>
+        <h2 id="headerTime" class="centerText">20-00 @Botania</h2>
+        <h2></h2>
         <div class="wrapper">
           <nav>
             <v-btn text="Lineup" @click="showLineup = !showLineup"></v-btn>
             <AboutDialog />
+            <v-btn text="Tickets"></v-btn>
           </nav>
         </div>
         <LineupView v-if="showLineup"></LineupView>
@@ -41,9 +43,11 @@ const showLineup = ref(false);
   align-items: center;
   width: 100%;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   font-size: 30px;
   margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .centerText {
   text-align: center;
