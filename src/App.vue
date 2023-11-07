@@ -1,35 +1,41 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-import MonsteraImg from "@/assets/ElectricMonstera.png";
 import EmbedItem from "@/components/EmbedItem.vue";
+import LineupView from "./views/LineupView.vue";
+import AboutDialog from "@/components/AboutDialog.vue";
+
+const showLineup = ref(false);
 </script>
 
 <template>
   <main>
-    <h1 id="mainTitle" class="centerText">ElectroJungle test</h1>
-    <div id="mainTitleBroken" class="centerText">
-      <h1>Electro</h1>
-      <h1>Jungle</h1>
-    </div>
     <Transition appear>
       <div id="bgImg">
-        <h2 id="headerDate" class="centerText">Lauantai 20.1.2012</h2>
+        <h1 id="mainTitle" class="centerText">
+          <span class="bigLetter">E</span>lectro<span class="bigLetter">J</span
+          >ungle
+        </h1>
+        <h2 id="headerDate" class="centerText">Lauantai 20.1.2024</h2>
         <h2 id="headerTime" class="centerText">20-00</h2>
         <div class="wrapper">
           <nav>
-            <RouterLink to="/lineup">Lineup</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
+            <v-btn text="Lineup" @click="showLineup = !showLineup"></v-btn>
+            <AboutDialog />
           </nav>
         </div>
-
-        <RouterView />
+        <LineupView v-if="showLineup"></LineupView>
       </div>
     </Transition>
   </main>
 </template>
 
 <style scoped>
+/* Soundcloud embed styling */
+:deep(.g-background-default) {
+  background-color: rgb(58, 58, 58) !important;
+}
+
 .wrapper nav {
   display: flex;
   align-items: center;
@@ -37,6 +43,7 @@ import EmbedItem from "@/components/EmbedItem.vue";
   justify-content: center;
   gap: 20px;
   font-size: 30px;
+  margin-top: 10px;
 }
 .centerText {
   text-align: center;
@@ -45,7 +52,12 @@ import EmbedItem from "@/components/EmbedItem.vue";
 #mainTitle {
   font-size: 100px;
   font-family: "mael";
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.4rem;
+  text-shadow: rgba(189, 27, 207, 1) 0px 0px 70px;
+  color: #dbd9d9;
+}
+.bigLetter {
+  font-size: 120px;
 }
 
 #mainTitleBroken {
@@ -59,20 +71,35 @@ import EmbedItem from "@/components/EmbedItem.vue";
   overflow: hidden;
   max-width: 100vw;
   min-height: 100vh;
-  background-color: aliceblue;
+  background-color: rgb(0, 0, 0);
   background-position: center center;
-  background-size: cover;
-  background-image: url("./assets/ElectricMonstera.png");
+  background-size: contain;
+  background-image: url("./assets/EJ background for website.jpg");
+  background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 450px) {
-  #mainTitleBroken {
-    display: none;
-    font-size: 30px;
-  }
+@media screen and (max-width: 900px) {
   #mainTitle {
     display: block;
     font-size: 40px;
+    margin-top: 20px;
+    text-shadow: rgba(189, 27, 207, 1) 0px 0px 10px;
+  }
+  #bgImg {
+    background-size: cover;
+  }
+  .bigLetter {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #mainTitle {
+    display: block;
+    font-size: 40px;
+  }
+  #bgImg {
+    background-size: cover;
   }
 }
 

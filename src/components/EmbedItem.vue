@@ -1,41 +1,57 @@
 <script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from "vue";
+
 const props = defineProps({
   djName: String,
   embedLink: String,
   host: String,
 });
+
+const windowWidth = ref(window.innerWidth);
+const windowHeight = ref(window.innerHeight);
+
+const frameHeight = computed(() => {
+  return windowWidth.value > 900 ? 200 : 100;
+});
+
+const handleResize = () => {
+  windowWidth.value = window.innerWidth;
+  windowHeight.value = window.innerHeight;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
 </script>
 
 <template>
   <div class="elements">
-    <h2>{{ djName }}</h2>
-    <iframe
-      v-if="host === 'mixcloud' && djName?.toLowerCase() == 'jtl'"
-      width="100%"
-      height="200"
-      src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2Fjuha-litmanen%2Fjtl-live-at-electrojungle-botania-joensuu%2F"
-      frameborder="0"
-    ></iframe>
+    <h2 class="name">{{ djName }}</h2>
+
     <iframe
       v-if="host === 'soundcloud' && djName?.toLowerCase() === 'pekko haimi'"
       width="100%"
-      height="200"
+      :height="frameHeight"
       scrolling="no"
       frameborder="no"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1346615167&color=%3c3c3c"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1322784883&color=%23260906"
     ></iframe>
     <iframe
       v-if="host === 'soundcloud' && djName?.toLowerCase() === 'marumiini'"
       width="100%"
-      height="200"
+      :height="frameHeight"
       scrolling="no"
       frameborder="no"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1641122880&color=%3c3c3c"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1641122880&color=%23260906"
     ></iframe>
     <iframe
       v-if="host === 'mixcloud' && djName?.toLowerCase() == 'utepia'"
       width="100%"
-      height="200"
+      :height="frameHeight + 20"
       src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2FUtepia%2Flive-psy-set-at-electrojungle-joensuu-botania%2F"
       frameborder="0"
     ></iframe>
@@ -48,5 +64,16 @@ const props = defineProps({
   flex-direction: column;
   justify-content: top;
   width: 100%;
+}
+
+.name {
+  white-space: nowrap;
+  color: #fff;
+  background-color: rgb(43, 43, 43);
+  width: max-content;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
 }
 </style>

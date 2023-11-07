@@ -7,6 +7,10 @@
   font-family: "detacher";
   src: url("@/assets/fonts/Detacher-Regular.ttf");
 }
+@font-face {
+  font-family: "exo";
+  src: url("@/assets/fonts/exo/Exo-Regular.otf");
+}
 
 #app {
 }

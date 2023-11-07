@@ -57,3 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.g-background-color {
+  background-color: #020108;
+}

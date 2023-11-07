@@ -9,7 +9,6 @@ import EmbedItem from "@/components/EmbedItem.vue";
   <main>
     <Transition appear name="embed">
       <div class="embedContainer">
-        <EmbedItem dj-name="JTL" host="mixcloud" />
         <EmbedItem dj-name="Pekko Haimi" host="soundcloud" />
         <EmbedItem dj-name="Marumiini" host="soundcloud" />
         <EmbedItem dj-name="UtepiA" host="mixcloud" />
@@ -24,9 +23,6 @@ import EmbedItem from "@/components/EmbedItem.vue";
   padding: 100px 100px 0 100px;
   gap: 60px;
   opacity: 0.9;
-}
-
-.embedColumn {
 }
 
 .centerText {
@@ -54,14 +50,11 @@ import EmbedItem from "@/components/EmbedItem.vue";
   background-size: cover;
   background-image: url("../assets/ElectricMonstera.png");
 }
-
-@media screen and (max-width: 450px) {
-  #mainTitleBroken {
-    display: block;
-    font-size: 30px;
-  }
-  #mainTitle {
-    display: none;
+@media screen and (max-width: 900px) {
+  .embedContainer {
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+    gap: 20px;
   }
 }
 
