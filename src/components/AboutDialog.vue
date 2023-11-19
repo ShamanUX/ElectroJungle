@@ -29,8 +29,7 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
             <a href="https://botania.fi">Botania</a> in Joensuu with electronic
             music from various subgenres like progressive house, drum n' bass,
             and psytrance. Meet like-minded people, feel relaxed and rejuvenated
-            by beats from genres like progressive house, psytrance and more!
-            This is the spirit of ElectroJungle.
+            by the beats! This is the spirit of ElectroJungle.
           </p>
           <br />
           <p>Alcoholic beverages and snackbar are available at the venue.</p>
