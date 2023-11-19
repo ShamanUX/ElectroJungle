@@ -21,12 +21,18 @@ const showLineup = ref(false);
         <h2></h2>
         <div class="wrapper">
           <nav>
-            <v-btn text="Lineup" @click="showLineup = !showLineup"></v-btn>
+            <v-btn
+              color="#6b0b54"
+              text="Lineup"
+              @click="showLineup = !showLineup"
+            ></v-btn>
             <AboutDialog />
-            <v-btn text="Tickets"></v-btn>
+            <v-btn class="tickets-btn" text="Tickets"></v-btn>
           </nav>
         </div>
-        <LineupView v-if="showLineup"></LineupView>
+        <Transition name="embed"
+          ><LineupView v-if="showLineup"></LineupView
+        ></Transition>
       </div>
     </Transition>
   </main>
@@ -38,6 +44,10 @@ const showLineup = ref(false);
   background-color: rgb(58, 58, 58) !important;
 }
 
+.tickets-btn {
+  background: linear-gradient(45deg, rgba(54, 54, 54, 0.8), 10%, #226ce0);
+}
+
 .wrapper nav {
   display: flex;
   align-items: center;
@@ -46,8 +56,6 @@ const showLineup = ref(false);
   gap: 10px;
   font-size: 30px;
   margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .centerText {
   text-align: center;
@@ -119,7 +127,7 @@ const showLineup = ref(false);
 }
 .embed-enter-active,
 .embed-leave-active {
-  transition: opacity 5s ease;
+  transition: opacity 2s ease;
 }
 
 .embed-enter-from,

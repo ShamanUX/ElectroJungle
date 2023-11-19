@@ -6,13 +6,11 @@ import EmbedItem from "@/components/EmbedItem.vue";
 
 <template>
   <main>
-    <Transition appear name="embed">
-      <div class="embedContainer">
-        <EmbedItem dj-name="Pekko Haimi" host="soundcloud" />
-        <EmbedItem dj-name="Marumiini" host="soundcloud" />
-        <EmbedItem dj-name="UtepiA" host="mixcloud" />
-      </div>
-    </Transition>
+    <div class="embedContainer">
+      <EmbedItem dj-name="Pekko Haimi" host="soundcloud" />
+      <EmbedItem dj-name="Marumiini" host="soundcloud" />
+      <EmbedItem dj-name="UtepiA" host="mixcloud" />
+    </div>
   </main>
 </template>
 
@@ -46,25 +44,5 @@ import EmbedItem from "@/components/EmbedItem.vue";
     padding: 20px 20px 0 20px;
     gap: 20px;
   }
-}
-
-/* Transitions */
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 2s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-.embed-enter-active,
-.embed-leave-active {
-  transition: opacity 5s ease;
-}
-
-.embed-enter-from,
-.embed-leave-to {
-  opacity: 0;
 }
 </style>
