@@ -27,7 +27,12 @@ const showLineup = ref(false);
               @click="showLineup = !showLineup"
             ></v-btn>
             <AboutDialog />
-            <v-btn class="tickets-btn" text="Tickets"></v-btn>
+            <v-btn
+              class="tickets-btn"
+              text="Tickets"
+              href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
+              target="_blank"
+            ></v-btn>
           </nav>
         </div>
         <Transition name="embed"
