@@ -9,7 +9,7 @@ import { useDisplay } from "vuetify";
 
 const showLineup = ref(false);
 
-const { mobile } = useDisplay();
+const { mobile, width } = useDisplay();
 </script>
 
 <template>
@@ -20,8 +20,12 @@ const { mobile } = useDisplay();
           <span class="bigLetter">E</span>lectro<span class="bigLetter">J</span
           >ungle
         </h1>
-        <h2 id="headerDate" class="centerText">Saturday 20.1.2024</h2>
-        <h2 id="headerTime" class="centerText">20-00 @Botania</h2>
+        <!-- Show different date info layout on pc -->
+
+        <div v-if="mobile">
+          <h2 id="headerDate" class="centerText">Saturday 20.1.2024</h2>
+          <h2 id="headerTime" class="centerText">20-00 @Botania</h2>
+        </div>
         <h2></h2>
         <div class="wrapper">
           <nav>
@@ -32,15 +36,15 @@ const { mobile } = useDisplay();
             ></v-btn>
             <AboutDialog />
             <v-btn
-              v-if="!mobile"
+              v-if="!mobile || width >= 500"
               class="tickets-btn"
               text="Tickets"
               href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
               target="_blank"
             ></v-btn>
             <v-btn
-              v-if="mobile"
-              icon="true"
+              v-if="mobile && width < 500"
+              rounded="default"
               class="tickets-btn"
               href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
               target="_blank"
