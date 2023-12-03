@@ -4,8 +4,12 @@ import { RouterLink, RouterView } from "vue-router";
 import EmbedItem from "@/components/EmbedItem.vue";
 import LineupView from "./views/LineupView.vue";
 import AboutDialog from "@/components/AboutDialog.vue";
+import InstagramIcon from "@/assets/instagram.png";
+import { useDisplay } from "vuetify";
 
 const showLineup = ref(false);
+
+const { mobile } = useDisplay();
 </script>
 
 <template>
@@ -28,11 +32,30 @@ const showLineup = ref(false);
             ></v-btn>
             <AboutDialog />
             <v-btn
+              v-if="!mobile"
               class="tickets-btn"
               text="Tickets"
               href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
               target="_blank"
             ></v-btn>
+            <v-btn
+              v-if="mobile"
+              icon="true"
+              class="tickets-btn"
+              href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
+              target="_blank"
+              height="36px"
+              width="36px"
+              ><v-icon icon="mdi-ticket" size="default"></v-icon
+            ></v-btn>
+
+            <a
+              href="https://www.instagram.com/electrojungle_joensuu/"
+              target="_blank"
+              class="instaBtnLink"
+            >
+              <img class="instaBtn" :src="InstagramIcon" />
+            </a>
           </nav>
         </div>
         <Transition name="embed"
@@ -47,6 +70,14 @@ const showLineup = ref(false);
 /* Soundcloud embed styling */
 :deep(.g-background-default) {
   background-color: rgb(58, 58, 58) !important;
+}
+.instaBtnLink {
+  max-height: 36px;
+  max-width: 36px;
+}
+.instaBtn {
+  max-width: 36px;
+  max-height: 36px;
 }
 
 .tickets-btn {
