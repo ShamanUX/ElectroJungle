@@ -21,10 +21,13 @@ const { mobile, width } = useDisplay();
           >ungle
         </h1>
         <!-- Show different date info layout on pc -->
-
-        <div v-if="mobile">
-          <h2 id="headerDate" class="centerText">Saturday 20.1.2024</h2>
-          <h2 id="headerTime" class="centerText">20-00 @Botania</h2>
+        <div v-if="width > 1100" class="diagonalHeadersContainer glow">
+          <h2 id="headerDate" class="">SATURDAY 20.1.2024</h2>
+          <h2 id="headerTime" class="">20-00 @BOTANIA</h2>
+        </div>
+        <div v-if="width <= 1100" class="glow">
+          <h2 id="headerDate" class="centerText">SATURDAY 20.1.2024</h2>
+          <h2 id="headerTime" class="centerText">20-00 @BOTANIA</h2>
         </div>
         <h2></h2>
         <div class="wrapper">
@@ -97,6 +100,25 @@ const { mobile, width } = useDisplay();
   font-size: 30px;
   margin-top: 10px;
 }
+.diagonalHeadersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  transform: rotate(-15deg);
+  left: 5vw;
+  margin-top: 20px;
+}
+
+.glow {
+  text-shadow: rgba(189, 27, 207, 1) 10px 0px 20px;
+}
+/*
+.horizontalHeaders {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+*/
 .centerText {
   text-align: center;
 }
@@ -106,7 +128,8 @@ const { mobile, width } = useDisplay();
   font-family: "mael";
   letter-spacing: 0.4rem;
   text-shadow: rgba(189, 27, 207, 1) 0px 0px 70px;
-  color: #dbd9d9;
+  color: #f1f1f1;
+  margin-bottom: -20px;
 }
 .bigLetter {
   font-size: 120px;
@@ -136,6 +159,7 @@ const { mobile, width } = useDisplay();
     font-size: 40px;
     margin-top: 20px;
     text-shadow: rgba(189, 27, 207, 1) 0px 0px 10px;
+    margin-bottom: auto;
   }
   #bgImg {
     background-size: cover;
@@ -149,6 +173,7 @@ const { mobile, width } = useDisplay();
   #mainTitle {
     display: block;
     font-size: 40px;
+    margin-bottom: auto;
   }
   #bgImg {
     background-size: cover;
