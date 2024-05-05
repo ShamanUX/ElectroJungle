@@ -22,12 +22,14 @@ const { mobile, width } = useDisplay();
         </h1>
         <!-- Show different date info layout on pc -->
         <div v-if="width > 1100" class="diagonalHeadersContainer glow">
-          <h2 id="headerDate" class="">SATURDAY 20.1.2024</h2>
-          <h2 id="headerTime" class="">20-00 @BOTANIA</h2>
+          <h2 id="headerDate" class="">SATURDAY 8.6.2024</h2>
+          <h2 id="headerTime" class="">20-01 @BOTANIA</h2>
         </div>
         <div v-if="width <= 1100" class="glow">
-          <h2 id="headerDate" class="centerText">SATURDAY 20.1.2024</h2>
-          <h2 id="headerTime" class="centerText">20-00 @BOTANIA</h2>
+          <h2 id="headerDate" class="centerText">
+            SATURDAY <span></span>8.6.2024
+          </h2>
+          <h2 id="headerTime" class="centerText">20-01 @BOTANIA</h2>
         </div>
         <h2></h2>
         <div class="wrapper">
@@ -127,9 +129,16 @@ const { mobile, width } = useDisplay();
   font-size: 100px;
   font-family: "mael";
   letter-spacing: 0.4rem;
-  text-shadow: rgba(189, 27, 207, 1) 0px 0px 70px;
+  text-shadow: rgb(87, 73, 96) 0px 0px 70px;
   color: #f1f1f1;
   margin-bottom: -20px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 36, 0.22190126050420167) 0%,
+    rgba(48, 9, 121, 0.5692401960784313) 30%,
+    rgba(99, 14, 159, 0) 100%
+  );
 }
 .bigLetter {
   font-size: 120px;
@@ -146,10 +155,10 @@ const { mobile, width } = useDisplay();
   overflow: hidden;
   max-width: 100vw;
   min-height: 100vh;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 3, 19);
   background-position: center center;
   background-size: contain;
-  background-image: url("./assets/EJ background for website.jpg");
+  background-image: url("./assets/SoundsystemPlajays.png");
   background-repeat: no-repeat;
 }
 

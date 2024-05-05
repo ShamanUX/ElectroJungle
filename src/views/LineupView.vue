@@ -7,9 +7,8 @@ import EmbedItem from "@/components/EmbedItem.vue";
 <template>
   <main>
     <div class="embedContainer">
-      <EmbedItem dj-name="Pekko Haimi" host="soundcloud" />
-      <EmbedItem dj-name="Marumiini" host="soundcloud" />
       <EmbedItem dj-name="UtepiA" host="mixcloud" />
+      <EmbedItem dj-name="TDJ/Penzoline" host="mixcloud" />
     </div>
   </main>
 </template>
@@ -24,18 +23,6 @@ import EmbedItem from "@/components/EmbedItem.vue";
 
 .centerText {
   text-align: center;
-}
-
-#mainTitle {
-  font-size: 100px;
-  font-family: "mael";
-  letter-spacing: 0.3rem;
-}
-
-#mainTitleBroken {
-  display: none;
-  font-family: "mael";
-  letter-spacing: 0.15rem;
 }
 
 @media screen and (max-width: 900px) {
