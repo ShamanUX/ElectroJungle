@@ -18,18 +18,15 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
           @click="isActive.value = false"
         ></v-icon>
         <v-card-text>
-          <p>
-            While it may be cold and dark outside, a shimmering hearth warms up
-            a greenhouse in the east. Beautiful plants reflect mesmerizing neon
-            lights as the venue oozes with haze.
-          </p>
+          <p>Let's welcome the summer with Botania's garden rave!</p>
           <br />
           <p>
-            ElectroJungle combines the tropical gardens of
-            <a href="https://botania.fi">Botania</a> in Joensuu with electronic
-            music from various subgenres like progressive house, drum n' bass,
-            and psytrance. Meet like-minded people, feel relaxed and rejuvenated
-            by the beats! This is the spirit of ElectroJungle.
+            ElectroJungle's third edition focuses on organic and summery sound.
+            The event starts in the blissful outdoor garden, shifting to the
+            large indoor greenhouse oozing with tropical vegetation closer to
+            the midnight. In addition to resident DJ UtepiA, the music selection
+            will be served by TDJ (Penzoline), who is known for Keidas and
+            Kajastus event concepts in the city of Tampere.
           </p>
           <br />
           <p>Alcoholic beverages and snackbar are available at the venue.</p>

@@ -16,6 +16,7 @@ const { mobile, width } = useDisplay();
   <main>
     <Transition appear>
       <div id="bgImg">
+        <div id="bgOverlay"></div>
         <h1 id="mainTitle" class="centerText">
           <span class="bigLetter">E</span>lectro<span class="bigLetter">J</span
           >ungle
@@ -44,14 +45,14 @@ const { mobile, width } = useDisplay();
               v-if="!mobile || width >= 500"
               class="tickets-btn"
               text="Tickets"
-              href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
+              href="https://kide.app/events/86a02da1-e33b-4478-b019-3b06164d7ddc"
               target="_blank"
             ></v-btn>
             <v-btn
               v-if="mobile && width < 500"
               rounded="default"
               class="tickets-btn"
-              href="https://kide.app/events/f9896873-a580-465f-a386-d2d72505d3cc"
+              href="https://kide.app/events/86a02da1-e33b-4478-b019-3b06164d7ddc"
               target="_blank"
               height="36px"
               width="36px"
@@ -131,13 +132,17 @@ const { mobile, width } = useDisplay();
   letter-spacing: 0.4rem;
   text-shadow: rgb(87, 73, 96) 0px 0px 70px;
   color: #f1f1f1;
+  text-align: center;
   margin-bottom: -20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  width: fit-content;
+  margin: 0 auto;
 
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 36, 0.22190126050420167) 0%,
-    rgba(48, 9, 121, 0.5692401960784313) 30%,
-    rgba(99, 14, 159, 0) 100%
+  background: radial-gradient(
+    rgba(48, 9, 121, 1) 0%,
+    rgba(48, 9, 121, 0.2) 50%,
+    rgba(0, 0, 36, 0) 80%
   );
 }
 .bigLetter {
@@ -153,13 +158,26 @@ const { mobile, width } = useDisplay();
 
 #bgImg {
   overflow: hidden;
+  position: relative;
   max-width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: rgb(0, 3, 19);
   background-position: center center;
   background-size: contain;
   background-image: url("./assets/SoundsystemPlajays.png");
+
   background-repeat: no-repeat;
+}
+
+#bgOverlay {
+  min-width: 100%;
+  min-height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(212, 11, 68, 0.569) 0%,
+    rgba(222, 45, 92, 0) 100%
+  );
+  position: absolute;
 }
 
 @media screen and (max-width: 900px) {
