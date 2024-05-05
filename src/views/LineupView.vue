@@ -19,6 +19,8 @@ import EmbedItem from "@/components/EmbedItem.vue";
   padding: 100px 100px 0 100px;
   gap: 60px;
   opacity: 0.9;
+  position: relative;
+  z-index: 9999;
 }
 
 .centerText {

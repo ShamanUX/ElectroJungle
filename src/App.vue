@@ -5,6 +5,8 @@ import EmbedItem from "@/components/EmbedItem.vue";
 import LineupView from "./views/LineupView.vue";
 import AboutDialog from "@/components/AboutDialog.vue";
 import InstagramIcon from "@/assets/instagram.png";
+import GenreText1 from "@/assets/Folktronica, House, Goa.png";
+import GenreText2 from "@/assets/Reggae, PsyDub, Trance.png";
 import { useDisplay } from "vuetify";
 
 const showLineup = ref(false);
@@ -26,7 +28,7 @@ const { mobile, width } = useDisplay();
           <h2 id="headerDate" class="">SATURDAY 8.6.2024</h2>
           <h2 id="headerTime" class="">20-01 @BOTANIA</h2>
         </div>
-        <div v-if="width <= 1100" class="glow">
+        <div v-if="width <= 1100" class="mobileHeadersContainer glow">
           <h2 id="headerDate" class="centerText">
             SATURDAY <span></span>8.6.2024
           </h2>
@@ -71,6 +73,9 @@ const { mobile, width } = useDisplay();
         <Transition name="embed"
           ><LineupView v-if="showLineup"></LineupView
         ></Transition>
+        <div class="genre-text-art">
+          <img :src="GenreText1" /> <img :src="GenreText2" />
+        </div>
       </div>
     </Transition>
   </main>
@@ -113,6 +118,18 @@ const { mobile, width } = useDisplay();
   margin-top: 20px;
 }
 
+.mobileHeadersContainer {
+  background: radial-gradient(
+    rgba(48, 9, 121, 1) 0%,
+    rgba(48, 9, 121, 0.2) 50%,
+    rgba(0, 0, 36, 0) 80%
+  );
+  width: fit-content;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0 auto;
+}
+
 .glow {
   text-shadow: rgba(189, 27, 207, 1) 10px 0px 20px;
 }
@@ -124,6 +141,22 @@ const { mobile, width } = useDisplay();
 */
 .centerText {
   text-align: center;
+}
+
+.genre-text-art {
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#headerDate {
+  -webkit-text-stroke: 1px black;
 }
 
 #mainTitle {
@@ -187,6 +220,7 @@ const { mobile, width } = useDisplay();
     margin-top: 20px;
     text-shadow: rgba(189, 27, 207, 1) 0px 0px 10px;
     margin-bottom: auto;
+    padding: 0;
   }
   #bgImg {
     background-size: cover;
