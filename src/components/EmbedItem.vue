@@ -52,7 +52,7 @@ onUnmounted(() => {
       v-if="host === 'mixcloud' && djName?.toLowerCase() == 'utepia'"
       width="100%"
       :height="frameHeight + 20"
-      src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2FUtepia%2Flive-psy-set-at-electrojungle-joensuu-botania%2F"
+      src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2FUtepia%2Felectrojungle-summer-24-promo-mix%2F"
       frameborder="0"
     ></iframe>
     <iframe
@@ -62,6 +62,14 @@ onUnmounted(() => {
       src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2FPenzoline%2Ftdj-live-kajastus-vol2-03022024%2F"
       frameborder="0"
     ></iframe>
+    <iframe
+      v-if="host === 'mixcloud' && djName?.toLowerCase() === 'jonnex'"
+      width="100%"
+      :height="frameHeight + 20"
+      src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=1&feed=%2FJoonac%2Ftold-them-it-would-be-liquid-fiktion-pikkujoulut-2022-liquid-set%2F"
+      frameborder="0"
+    >
+    </iframe>
   </div>
 </template>
 

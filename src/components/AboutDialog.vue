@@ -10,7 +10,7 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
     </template>
 
     <template v-slot:default="{ isActive }">
-      <v-card title="About">
+      <v-card title="About" color="#520160">
         <v-icon
           class="close-icon"
           size="large"
@@ -18,22 +18,29 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
           @click="isActive.value = false"
         ></v-icon>
         <v-card-text>
-          <p>Let's welcome the summer with Botania's garden rave!</p>
+          <p>Escape the darkening night at Botania garden party!</p>
           <br />
           <p>
-            ElectroJungle's third edition focuses on organic and summery sound.
-            The event starts in the blissful outdoor garden, shifting to the
-            large indoor greenhouse oozing with tropical vegetation closer to
-            the midnight. In addition to resident DJ UtepiA, the music selection
-            will be served by TDJ (Penzoline), who is known for Keidas and
-            Kajastus event concepts in the city of Tampere.
+            ElectroJungle Vol.4 is here! Treat yourself with a night among
+            beautiful plants and happy dancers, not to mention excellent
+            electronic music and artists. <br />
+
+            DJs from the summer party Utepia and TDJ/Penzoline join forces with
+            the experienced Drum and Bass player Jonnex to create an amazing
+            musical landscape. The evening starts with organic downtempo rythms,
+            picking up over time to drum and bass tempo, ultimately ending with
+            goa & psytrance vibrances.
           </p>
           <br />
-          <p>Alcoholic beverages and snackbar are available at the venue.</p>
+          <p>
+            The age limit is K18. Alcoholic beverages and snackbar are available
+            at the venue.
+          </p>
           <br />
           <p>
             The event is hosted by
-            <a href="https://rajatontaide.fi">Rajaton Taide</a> association.
+            <a href="https://rajatontaide.fi">Rajaton Taide</a> association with
+            Botania staff.
           </p>
         </v-card-text>
         <div class="logosContainer">

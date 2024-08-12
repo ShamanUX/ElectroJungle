@@ -7,8 +7,9 @@ import EmbedItem from "@/components/EmbedItem.vue";
 <template>
   <main>
     <div class="embedContainer">
-      <EmbedItem dj-name="UtepiA" host="mixcloud" />
+      <EmbedItem dj-name="Jonnex" host="mixcloud" />
       <EmbedItem dj-name="TDJ/Penzoline" host="mixcloud" />
+      <EmbedItem dj-name="UtepiA" host="mixcloud" />
     </div>
   </main>
 </template>
@@ -30,7 +31,7 @@ import EmbedItem from "@/components/EmbedItem.vue";
 @media screen and (max-width: 900px) {
   .embedContainer {
     flex-direction: column;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 20px 20px;
     gap: 20px;
   }
 }

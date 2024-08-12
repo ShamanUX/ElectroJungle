@@ -12,5 +12,7 @@
   src: url("@/assets/fonts/exo/Exo-Regular.otf");
 }
 
-#app {
+@font-face {
+  font-family: "agencyfb";
+  src: url("@/assets/fonts/AGENCYFB.woff");
 }
