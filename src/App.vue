@@ -16,7 +16,7 @@ const { mobile, width } = useDisplay();
 
 const date = "7.9.2024";
 const dayOfWeek = "SATURDAY";
-const timeAndPlace = "20-01 @BOTANIA";
+const timeAndPlace = "19-00 @BOTANIA";
 const ticketLink =
   "https://kide.app/events/62d26aa9-bb30-41c4-a55b-65e27e51cf3a";
 </script>
