@@ -4,6 +4,10 @@
   src: url("@/assets/fonts/MAEL.ttf");
 }
 @font-face {
+  font-family: "dxcitrus";
+  src: url("@/assets/fonts/DxSitrus-Expanded.otf");
+}
+@font-face {
   font-family: "detacher";
   src: url("@/assets/fonts/Detacher-Regular.ttf");
 }

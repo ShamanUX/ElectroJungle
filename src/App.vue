@@ -28,8 +28,10 @@ const ticketLink =
       <div id="content">
         <div id="bgOverlay"></div>
         <h1 id="mainTitle" class="centerText">
-          <span class="bigLetter">E</span>lectro<span class="bigLetter">J</span
-          >ungle
+          <span class="bigLetter">E</span>LECTRO<span
+            class="bigLetter title-spacing-fix"
+            >J</span
+          >UNGLE
         </h1>
         <!-- Show different date info layout on pc -->
         <div v-if="width > 1100" class="diagonalHeadersContainer glow">
@@ -194,6 +196,10 @@ const ticketLink =
   z-index: 5;
 }
 
+.title-spacing-fix {
+  margin-left: -0.35em;
+}
+
 .header-text-background-banner {
   position: absolute;
   height: 100%;
@@ -224,26 +230,20 @@ const ticketLink =
 
 #mainTitle {
   font-size: 100px;
-  font-family: "mael";
-  letter-spacing: 0.4rem;
+  font-family: "dxcitrus";
   text-shadow: rgb(87, 73, 96) 0px 0px 70px;
-  color: #f1f1f1;
+  color: #ddfaff;
   text-align: center;
   margin-bottom: -20px;
   padding-left: 100px;
   padding-right: 100px;
   width: fit-content;
   margin: 0 auto;
+  -webkit-text-stroke: #0db8ff 1px;
+  text-shadow: 1px 1px 10px #0db8ff, 1px 1px 10px #ccc;
 }
 .bigLetter {
   font-size: 120px;
-}
-
-#mainTitleBroken {
-  display: none;
-  font-family: "mael";
-  letter-spacing: 0.15rem;
-  line-height: 4rem;
 }
 
 #content {
