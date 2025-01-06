@@ -7,9 +7,17 @@ import EmbedItem from "@/components/EmbedItem.vue";
 <template>
   <main>
     <div class="embedContainer">
-      <EmbedItem dj-name="Jonnex" host="mixcloud" />
-      <EmbedItem dj-name="TDJ/Penzoline" host="mixcloud" />
-      <EmbedItem dj-name="UtepiA" host="mixcloud" />
+      <EmbedItem
+        dj-name="WIOLA 23-01"
+        host="soundcloud"
+        mix-source="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1953536411"
+      />
+      <EmbedItem dj-name="SEROTONIINI-S3TÄ 21:30-23" host="mixcloud" />
+      <EmbedItem
+        dj-name="UTEPIA 20-21:30"
+        host="mixcloud"
+        mix-source="%2FUtepia%2Futepia-mix-la-penja-fest-ii-01092024%2F"
+      />
     </div>
   </main>
 </template>
