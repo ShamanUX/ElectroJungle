@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import rajatonLogo from "@/assets/rajatontaide_logo_transparent.svg";
+import fiktiologo from "@/assets/Fiktio Logo white.png";
 import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
 </script>
 
@@ -18,34 +18,62 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
           @click="isActive.value = false"
         ></v-icon>
         <v-card-text>
-          <p>Escape the darkening night at Botania garden party!</p>
-          <br />
           <p>
-            ElectroJungle Vol.4 is here! Treat yourself with a night among
-            beautiful plants and happy dancers, not to mention excellent
-            electronic music and artists. <br />
-
-            DJs from the summer party Utepia and TDJ/Penzoline join forces with
-            the experienced Drum and Bass player Jonnex to create an amazing
-            musical landscape. The evening starts with organic downtempo rythms,
-            picking up over time to drum and bass tempo, ultimately ending with
-            goa & psytrance vibrances.
+            The wait is over and soon we can tune ourselves to exotic
+            frequencies!
           </p>
           <br />
           <p>
+            Finland's most tropical electronic music event gets you dancing in
+            the middle of Botania's beautiful jungle. The music will begin with
+            rejuvenating chillout and downtempo beats by Utepia, the trance
+            master Serotoniini-S3tä serves eye watering melodies and the evening
+            peaks with the amazing Wiola’s psytrance set! <br />
+            On the event's fifth chapter the host will be Fiktio ry, with
+            decades-long party organizing experience, together with Botania
+            staff.
+          </p>
+          <br />
+          <h2>♡ ACCESSIBILITY ♡</h2>
+          <p>
+            The event venue is wheelchair accessible, if needed contact Botania
+            staff member at the door or beforehand. The staff will assist you at
+            the venue. Accessible toilet at the venue. tel. 050 5629482
+          </p>
+          <br />
+          <h2>♡ SAFER SPACE EVENT ♡</h2>
+          <p>
+            It is our goal to make events enjoyable and safe for everyone. That
+            is why Botania and our staff have committed to following safer space
+            guidelines, and we hope our customers adhere to them as well. Let's
+            work together to create a safer space for everyone! <br />
+            If you encounter harassment or inappropriate behaviour at our
+            events, tell our staff about it. We will intervene!
+          </p>
+          <br />
+
+          <p>
             The age limit is K18. Alcoholic beverages and snackbar are available
-            at the venue.
+            at the venue. Jackets and large bags must be left at the cloakroom.
           </p>
           <br />
           <p>
             The event is hosted by
-            <a href="https://rajatontaide.fi">Rajaton Taide</a> association with
-            Botania staff.
+            <a href="https://fiktio.fi" target="_blank">Fiktio</a> in
+            association with
+            <a href="https://botania.fi" target="_blank">Botania</a>
+            staff.
           </p>
         </v-card-text>
         <div class="logosContainer">
-          <img class="rajatonlogo" :src="rajatonLogo" />
-          <div><img class="botanialogo" :src="botaniaLogo" /></div>
+          <img
+            class="fiktiologo"
+            alt="Fiktio association logo"
+            :src="fiktiologo"
+          />
+          <div>
+            <img class="botanialogo" alt="Botania logo" :src="botaniaLogo" />
+          </div>
         </div>
       </v-card>
     </template>
@@ -61,11 +89,9 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
   margin: 0 auto;
   padding-bottom: 10px;
 }
-.rajatonlogo {
+.fiktiologo {
   max-width: 30%;
-  background-color: rgb(226, 226, 226);
   padding: 1em;
-  border-radius: 50%;
   margin: 1em;
   flex: 1;
 }
@@ -77,8 +103,9 @@ import botaniaLogo from "@/assets/logo-vaaka-vihrea-botania.png";
 }
 
 .aboutDialog {
-  font-family: "exo";
-  width: 50%;
+  font-family: "vox";
+  font-weight: 300;
+  width: 80%;
 }
 .close-icon {
   position: absolute;
