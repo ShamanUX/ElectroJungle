@@ -5,20 +5,16 @@ import EmbedItem from "@/components/EmbedItem.vue";
 import LineupView from "./views/LineupView.vue";
 import AboutDialog from "@/components/AboutDialog.vue";
 import InstagramIcon from "@/assets/instagram.png";
-import GenreText1 from "@/assets/Folktronica, House, Goa.png";
-import GenreText2 from "@/assets/Reggae, PsyDub, Trance.png";
-import AutumnPortalImg from "@/assets/ElectroJungle_AutumnPortal.png";
 import { useDisplay } from "vuetify";
 
 const showLineup = ref(false);
 
 const { mobile, width } = useDisplay();
 
-const date = "7.9.2024";
+const date = "2.1.2025";
 const dayOfWeek = "SATURDAY";
-const timeAndPlace = "19-00 @BOTANIA";
-const ticketLink =
-  "https://kide.app/events/62d26aa9-bb30-41c4-a55b-65e27e51cf3a";
+const timeAndPlace = "20-01 @BOTANIA";
+const ticketLink = "";
 </script>
 
 <template>
@@ -34,22 +30,21 @@ const ticketLink =
           >UNGLE
         </h1>
         <!-- Show different date info layout on pc -->
-        <div v-if="width > 1100" class="diagonalHeadersContainer glow">
-          <h2 id="headerDate" class="">
-            {{ dayOfWeek }}
-            <span class="dateText">{{ date }}</span>
-          </h2>
-          <h2 id="headerTime" class="">{{ timeAndPlace }}</h2>
+        <div v-if="width > 1100" class="diagonalHeadersContainer">
+          <h2 id="headerDate">{{ dayOfWeek }} {{ date }}</h2>
+          <h2 id="headerTime">{{ timeAndPlace }}</h2>
         </div>
         <!-- Tablets and phones -->
-        <div v-if="width <= 1100" class="mobileHeadersContainer glow">
+        <div v-if="width <= 1100" class="mobileHeadersContainer">
           <h2 id="headerDate" class="centerText nowrap">
-            {{ dayOfWeek }} <span class="dateText"> {{ date }}</span>
+            {{ dayOfWeek }} {{ date }}
           </h2>
           <h2 id="headerTime" class="centerText nowrap">
             {{ timeAndPlace }}
           </h2>
-          <div class="header-text-background-banner"></div>
+          <div
+            class="header-text-background-banner black-fadeout-gradient"
+          ></div>
         </div>
         <div class="wrapper">
           <nav>
@@ -91,17 +86,12 @@ const ticketLink =
         ></Transition>
 
         <div class="genre-text-art">
-          <h2 class="genre-text">Downtempo | House | Trance</h2>
-          <h2 class="genre-text">DnB | Goa | Psy</h2>
-          <!-- Old genre text imgs 
-              <img :src="GenreText1" /> <img :src="GenreText2" />
-              -->
-          <div class="genre-background-banner"></div>
+          <h2 class="genre-text">CHILLOUT | DOWNTEMPO</h2>
+          <h2 class="genre-text">PROGHOUSE | TRANCE | PSY</h2>
+          <div class="genre-background-banner black-fadeout-gradient"></div>
         </div>
       </div>
     </Transition>
-
-    <img id="bgImg2" :src="AutumnPortalImg" />
   </main>
 </template>
 
@@ -122,12 +112,6 @@ const ticketLink =
 
 .tickets-btn {
   background: linear-gradient(45deg, rgba(54, 54, 54, 0.8), 10%, #226ce0);
-}
-
-.dateText {
-  font-family: "agencyfb";
-  font-weight: 400;
-  font-size: 28px;
 }
 
 .nowrap {
@@ -163,7 +147,7 @@ const ticketLink =
   position: relative;
 }
 
-.glow {
+.purple-glow {
   text-shadow: rgb(148, 2, 85) 10px 0px 20px;
 }
 /*
@@ -190,7 +174,6 @@ const ticketLink =
 }
 
 .genre-text {
-  -webkit-text-stroke: 1px purple;
   text-align: center;
   position: relative;
   z-index: 5;
@@ -203,7 +186,7 @@ const ticketLink =
 .header-text-background-banner {
   position: absolute;
   height: 100%;
-  background: linear-gradient(to right, #ffffff00, purple 50%, #ffffff00);
+
   width: 110%;
   top: 0;
   z-index: 0;
@@ -212,13 +195,20 @@ const ticketLink =
 .genre-background-banner {
   position: absolute;
   height: 100%;
-  background: linear-gradient(to right, #ffffff00, purple 50%, #ffffff00);
   width: 110%;
   z-index: 2;
 }
 
+.black-fadeout-gradient {
+  background: linear-gradient(
+    to right,
+    #ffffff00,
+    rgb(1, 12, 7) 50%,
+    #ffffff00
+  );
+}
+
 #headerDate {
-  -webkit-text-stroke: 1px rgb(69, 4, 69);
   z-index: 1;
   position: relative;
 }
@@ -231,7 +221,6 @@ const ticketLink =
 #mainTitle {
   font-size: 100px;
   font-family: "dxcitrus";
-  text-shadow: rgb(87, 73, 96) 0px 0px 70px;
   color: #ddfaff;
   text-align: center;
   margin-bottom: -20px;
@@ -265,7 +254,7 @@ const ticketLink =
   background-color: rgb(0, 3, 19);
   background-position: center center;
   background-size: cover;
-  background-image: url("./assets/ElectroJungle_WavyBackground.jpg");
+  background-image: url("./assets/electrojungle-tausta.png");
 
   background-repeat: no-repeat;
   z-index: 1;
