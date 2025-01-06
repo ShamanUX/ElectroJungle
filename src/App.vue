@@ -6,8 +6,10 @@ import LineupView from "./views/LineupView.vue";
 import AboutDialog from "@/components/AboutDialog.vue";
 import InstagramIcon from "@/assets/instagram.png";
 import { useDisplay } from "vuetify";
+import TwinkleStars1 from "@/assets/TwinkleStars1.png";
+import TwinkleStars2 from "@/assets/TwinkleStars2.png";
 
-const showLineup = ref(false);
+const showLineup = ref(true);
 
 const { mobile, width } = useDisplay();
 
@@ -28,14 +30,21 @@ const ticketLink = "";
             class="bigLetter title-spacing-fix"
             >J</span
           >UNGLE
+          <!-- Decorate title with stars -->
+          <div class="animate-deco-1">
+            <img class="title-deco-1" :src="TwinkleStars1" />
+          </div>
+          <div class="animate-deco-2">
+            <img class="title-deco-2" :src="TwinkleStars2" />
+          </div>
         </h1>
         <!-- Show different date info layout on pc -->
-        <div v-if="width > 1100" class="diagonalHeadersContainer">
+        <div v-if="width > 1000" class="diagonalHeadersContainer">
           <h2 id="headerDate">{{ dayOfWeek }} {{ date }}</h2>
           <h2 id="headerTime">{{ timeAndPlace }}</h2>
         </div>
         <!-- Tablets and phones -->
-        <div v-if="width <= 1100" class="mobileHeadersContainer">
+        <div v-if="width <= 1000" class="mobileHeadersContainer">
           <h2 id="headerDate" class="centerText nowrap">
             {{ dayOfWeek }} {{ date }}
           </h2>
@@ -48,11 +57,13 @@ const ticketLink = "";
         </div>
         <div class="wrapper">
           <nav>
-            <v-btn
-              color="#6b0b54"
-              text="Lineup"
-              @click="showLineup = !showLineup"
-            ></v-btn>
+            <!-- 
+              <v-btn
+                color="#6b0b54"
+                text="Lineup"
+                @click="showLineup = !showLineup"
+              ></v-btn>
+            -->
             <AboutDialog />
             <v-btn
               v-if="!mobile || width >= 500"
@@ -99,6 +110,71 @@ const ticketLink = "";
 /* Soundcloud embed styling */
 :deep(.g-background-default) {
   background-color: rgb(58, 58, 58) !important;
+}
+
+@keyframes animate-deco-1 {
+  from {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes animate-deco-2 {
+  from {
+    transform: rotate(8deg);
+  }
+  to {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 100%;
+  }
+  3% {
+    opacity: 40%;
+  }
+  6% {
+    opacity: 100%;
+  }
+}
+
+.animate-deco-1 {
+  animation-name: animate-deco-1;
+  animation-duration: 6s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.title-deco-1 {
+  animation: twinkle 10s ease-in 0s infinite forwards;
+}
+
+.title-deco-2 {
+  animation: twinkle 13s ease-in 2s infinite forwards;
+}
+
+.animate-deco-2 {
+  animation-name: animate-deco-2;
+  animation-duration: 8s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: ;
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .instaBtnLink {
@@ -219,6 +295,7 @@ const ticketLink = "";
 }
 
 #mainTitle {
+  position: relative;
   font-size: 100px;
   font-family: "dxcitrus";
   color: #ddfaff;
@@ -288,27 +365,60 @@ const ticketLink = "";
 }
 
 @media screen and (max-width: 900px) {
+  .animate-deco-1 {
+    left: -90px;
+    top: 20px;
+  }
+  .animate-deco-2 {
+    top: -50px;
+    right: -70px;
+  }
+  .title-deco-1 {
+    transform: scale(0.8);
+  }
+
   #mainTitle {
     display: block;
-    font-size: 40px;
+    font-size: 80px;
     margin-top: 20px;
     text-shadow: rgba(189, 27, 207, 1) 0px 0px 10px;
     margin-bottom: auto;
     padding: 0;
   }
+  .genre-text-art {
+    display: none;
+  }
   #bgImg {
     background-size: cover;
   }
   .bigLetter {
-    font-size: 50px;
+    font-size: 100px;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 682px) {
+  .animate-deco-1 {
+    left: -90px;
+    top: -20px;
+  }
+  .animate-deco-2 {
+    top: -40px;
+    right: -60px;
+  }
+  .title-deco-1 {
+    transform: scale(0.5);
+  }
+
+  .title-deco-2 {
+    transform: scale(0.5);
+  }
   #mainTitle {
     display: block;
     font-size: 40px;
     margin-bottom: auto;
+  }
+  .bigLetter {
+    font-size: 60px;
   }
   #bgImg {
     background-size: cover;
